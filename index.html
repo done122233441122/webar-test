@@ -130,10 +130,12 @@
                 });
                 loadingBar.style.display = "block";
             }
-            // Empty facing mode lets the browser choose the default camera.
+            // Prefer the rear camera on mobile devices.
 		window.unityFacingMode = "environment"
             window.WEBCAM_SETTINGS = {
-                video: {},
+                video: {
+                    facingMode: unityFacingMode,
+                },
                 audio: false
             };
             window.requestingForPermissions = false;
